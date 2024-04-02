@@ -43,3 +43,24 @@ Explore the scripts/ directory for data preprocessing, model training, and evalu
 Utilize the models/ directory for implementing and experimenting with different deep learning architectures.
 
 Refer to the data/ directory for the dataset used in the research.
+
+Process to execute the main hybrid code, you'll need to follow these steps:
+Install necessary packages: Ensure you have numpy and tensorflow installed. You can install them using pip if you haven't already:
+
+pip install numpy tensorflow
+Save your model: Make sure you have a trained model saved in the specified path (cnn_lstm_hybrid_model.h5). This model should be trained to accept input data in the format defined in the code.
+
+Run the code: Copy the provided code into a Python script or a Jupyter Notebook. Ensure the path to your model file is correct. Then execute the script or notebook.
+
+Understand the code flow:
+
+The code begins by importing necessary libraries (numpy and load_model from tensorflow.keras.models).
+Example input data (time_stamps and heart_rates) are provided. heart_rates are normalized to be between 0 and 1.
+The trained model is loaded from the specified path.
+The input data is windowed to match the input shape expected by the model. The window size is set to 7.
+The model predicts the labels for the input data.
+The first prediction is adjusted based on the difference between the first two heart rate values.
+Finally, the predicted labels are outputted, and based on the count of fault predictions, a message indicating whether there's a fault in the sensor data is printed.
+Review the output: After execution, the script will print the predicted labels and a message indicating whether there's a fault in the sensor data based on the predictions.
+
+By following these steps, you should be able to execute the provided code and analyze its output. Make sure your environment is properly set up with the required packages and that the model file exists in the specified path.
